@@ -1,0 +1,129 @@
+{
+    "info": {
+      "_postman_id": "0ec9e364-8d00-4d31-89cc-11c356bca1b0",
+      "name": "Python Learning App",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "User Registration",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/register",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "register"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "User Login",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "login"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}"
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Enroll in Learning Path",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer your_auth_token_here"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8080/api/enroll/:learningPathID",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "enroll", ":learningPathID"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update User",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer your_auth_token_here"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8080/api/user",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "user"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"old_password\": \"password123\",\n  \"new_password\": \"password456\"\n}"
+          }
+        },
+        "response": []
+      }, {
+        "name": "Get User Points and Level",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer your_auth_token_here"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8080/api/user/points",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "user", "points"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Forgot Password",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/forgot-password",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "forgot-password"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"johndoe@example.com\"\n}"
+          }
+        },
+        "response": []
+      }
+    ]
+  }

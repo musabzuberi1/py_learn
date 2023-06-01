@@ -1,0 +1,63 @@
+Yes, you can test all these functions for an instructor now. I will provide you with a list of test cases that you can use in Postman to test each endpoint.
+
+1. Instructor Registration:
+    - POST `http://localhost:8080/instructors/register`
+    - Request Body: `{"name": "Instructor Name", "age": 30, "email": "instructor@example.com", "password": "your_password"}`
+
+2. Instructor Login:
+    - POST `http://localhost:8080/instructors/login`
+    - Request Body: `{"email": "instructor@example.com", "password": "your_password"}`
+
+3. Instructor Forgot Password:
+    - POST `http://localhost:8080/instructors/forgot-password`
+    - Request Body: `{"email": "instructor@example.com"}`
+
+4. Instructor Update Email:
+    - PUT `http://localhost:8080/instructors/update-email`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+    - Request Body: `{"email": "new_email@example.com"}`
+
+5. Instructor Change Password:
+    - PUT `http://localhost:8080/instructors/change-password`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+    - Request Body: `{"old_password": "your_password", "new_password": "new_password"}`
+
+6. Create Learning Path:
+    - POST `http://localhost:8080/instructors/learning-paths`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+    - Request Body: `{"title": "Learning Path Title"}`
+
+7. Get All Learning Paths:
+    - GET `http://localhost:8080/instructors/learning-paths`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+
+8. Get Learning Path:
+    - GET `http://localhost:8080/instructors/learning-paths/:pathID`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+
+9. Update Learning Path:
+    - PUT `http://localhost:8080/instructors/learning-paths/:pathID`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+    - Request Body: `{"title": "Updated Learning Path Title"}`
+
+10. Delete Learning Path:
+    - DELETE `http://localhost:8080/instructors/learning-paths/:pathID`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+
+11. Create Exercise:
+    - POST `http://localhost:8080/instructors/learning-paths/:pathID/exercises`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+    - Request Body: `{"title": "Exercise Title", "description": "Exercise Description", "video_url": "https://example.com/video", "sample_code": "print('Hello, World!')"}`
+
+12. Get All Exercises:
+    - GET `http://localhost:8080/instructors/learning-paths/:pathID/exercises`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+
+13. Get Exercise:
+    - GET `http://localhost:8080/instructors/learning-paths/:pathID/exercises/:exerciseID`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+
+14. Update Exercise:
+    - PUT `http://localhost:8080/instructors/learning-paths/:pathID/exercises/:exerciseID`
+    - Request Headers: `Authorization: Bearer <JWT_TOKEN>`
+    - Request Body: `{"title": "Updated Exercise Title", "description": "Updated Exercise Description", "video_url": "https://example.com/new_video

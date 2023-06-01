@@ -1,0 +1,64 @@
+You can use Postman to test the following test cases for both users and instructors. Make sure your server is running before testing the endpoints.
+
+User Test Cases:
+
+1. User Registration:
+    - POST `http://localhost:8080/api/users/register`
+    - Request Body: `{"name": "User Name", "age": 25, "email": "user@example.com", "password": "your_password"}`
+
+2. User Login:
+    - POST `http://localhost:8080/api/users/login`
+    - Request Body: `{"email": "user@example.com", "password": "your_password"}`
+
+3. User Forgot Password:
+    - POST `http://localhost:8080/api/users/forgot-password`
+    - Request Body: `{"email": "user@example.com"}`
+
+Make sure to replace `<USER_JWT_TOKEN>` with the actual JWT token you receive upon successful login.
+
+Instructor Test Cases:
+
+1. Instructor Registration:
+    - POST `http://localhost:8080/api/instructors/register`
+    - Request Body: `{"name": "Instructor Name", "age": 30, "email": "instructor@example.com", "password": "your_password"}`
+
+2. Instructor Login:
+    - POST `http://localhost:8080/api/instructors/login`
+    - Request Body: `{"email": "instructor@example.com", "password": "your_password"}`
+
+3. Instructor Forgot Password:
+    - POST `http://localhost:8080/api/instructors/forgot-password`
+    - Request Body: `{"email": "instructor@example.com"}`
+
+Make sure to replace `<INSTRUCTOR_JWT_TOKEN>` with the actual JWT token you receive upon successful login.
+
+Testing Authenticated Routes:
+
+After successfully logging in as a user or instructor, you'll receive a JWT token in the response. Use this token to authenticate the following requests by adding it to the "Authorization" header in the format `Bearer <JWT_TOKEN>`.
+
+Replace `<USER_JWT_TOKEN>` with the user's JWT token and `<INSTRUCTOR_JWT_TOKEN>` with the instructor's JWT token.
+
+User Authenticated Test Cases:
+
+1. User Enroll in a Learning Path:
+    - POST `http://localhost:8080/api/enroll/:learningPathID`
+    - Request Headers: `Authorization: Bearer <USER_JWT_TOKEN>`
+
+2. Update User Information:
+    - PUT `http://localhost:8080/api/user`
+    - Request Headers: `Authorization: Bearer <USER_JWT_TOKEN>`
+    - Request Body: `{"email": "new_user_email@example.com", "password": "new_password"}`
+
+Instructor Authenticated Test Cases:
+
+1. Update Instructor Email:
+    - PUT `http://localhost:8080/api/instructors/update-email`
+    - Request Headers: `Authorization: Bearer <INSTRUCTOR_JWT_TOKEN>`
+    - Request Body: `{"email": "new_email@example.com"}`
+
+2. Change Instructor Password:
+    - PUT `http://localhost:8080/api/instructors/change-password`
+    - Request Headers: `Authorization: Bearer <INSTRUCTOR_JWT_TOKEN>`
+    - Request Body: `{"old_password": "your_password", "new_password": "new_password"}`
+
+Note: Make sure to replace the placeholders like `:learningPathID`, `:pathID`, and `:exerciseID` with actual IDs from your database when testing the endpoints.
